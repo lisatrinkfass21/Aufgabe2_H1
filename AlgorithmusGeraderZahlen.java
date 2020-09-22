@@ -48,8 +48,9 @@ public class AlgorithmusGeraderZahlen {
     }
 
     private void printAlgorithmus() {
+
         for (int i = 0; i < natList.size(); i++) {
-            System.out.println(calcAlgorithmus(i));
+            System.out.println(calcAlgorithmus(natList.get(i)));
         }
     }
 
@@ -57,8 +58,8 @@ public class AlgorithmusGeraderZahlen {
         int r = 0;
         int y = 0;
         for (int i = primeList.size(); i > 0; i--) {
-            if (primeList.get(i) < natZahl) {
-                r = primeList.get(i);
+            if (primeList.get(i - 1) < natZahl) {
+                r = primeList.get(i - 1);
                 if (primeList.contains(natZahl - r)) {
                     return (natZahl + " summe: " + natZahl + " = " + r + " + " + (natZahl - r));
                 }
