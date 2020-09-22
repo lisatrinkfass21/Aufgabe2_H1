@@ -41,7 +41,7 @@ public class AlgorithmusGeraderZahlen {
     public AlgorithmusGeraderZahlen(int ober) {
         es = new ErastothenesPrimeSieve(ober);
         primeList.addAll(es.getListOfPrimes());
-        for (int i = 4; i < ober; i++) {
+        for (int i = 4; i <= ober; i++) {
             natList.add(i);
             i++;
         }
@@ -56,7 +56,7 @@ public class AlgorithmusGeraderZahlen {
 
     private String calcAlgorithmus(int natZahl) {
         int r = 0;
-        int y = 0;
+
         for (int i = primeList.size(); i > 0; i--) {
             if (primeList.get(i - 1) < natZahl) {
                 r = primeList.get(i - 1);
