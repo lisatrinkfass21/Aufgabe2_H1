@@ -15,9 +15,9 @@ import java.util.Scanner;
  */
 public class AlgorithmusGeraderZahlen {
 
-    private ArrayList<Integer> primeList;
+    private ArrayList<Integer> primeList = new ArrayList<Integer>();
     ErastothenesPrimeSieve es;
-    private ArrayList<Integer> natList;
+    private ArrayList<Integer> natList = new ArrayList<Integer>();
 
     public static void main(String[] args) {
         System.out.println("Geben Sie eine Obergrenze ein");
@@ -35,6 +35,7 @@ public class AlgorithmusGeraderZahlen {
         }
         AlgorithmusGeraderZahlen az = new AlgorithmusGeraderZahlen(obergrenze);
 
+        az.printAlgorithmus();
     }
 
     public AlgorithmusGeraderZahlen(int ober) {
@@ -47,11 +48,23 @@ public class AlgorithmusGeraderZahlen {
     }
 
     private void printAlgorithmus() {
-
+        for (int i = 0; i < natList.size(); i++) {
+            System.out.println(calcAlgorithmus(i));
+        }
     }
 
-    private void calcAlgorithmus(int natZahl) {
-
+    private String calcAlgorithmus(int natZahl) {
+        int r = 0;
+        int y = 0;
+        for (int i = primeList.size(); i > 0; i--) {
+            if (primeList.get(i) < natZahl) {
+                r = primeList.get(i);
+                if (primeList.contains(natZahl - r)) {
+                    return (natZahl + " summe: " + natZahl + " = " + r + " + " + (natZahl - r));
+                }
+            }
+        }
+        return ("");
     }
 
 }
