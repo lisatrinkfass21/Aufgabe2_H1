@@ -48,7 +48,6 @@ public class AlgorithmusGeraderZahlen {
     }
 
     private void printAlgorithmus() {
-
         for (int i = 0; i < natList.size(); i++) {
             System.out.println(calcAlgorithmus(natList.get(i)));
         }
@@ -56,7 +55,6 @@ public class AlgorithmusGeraderZahlen {
 
     private String calcAlgorithmus(int natZahl) {
         int r = 0;
-
         for (int i = primeList.size(); i > 0; i--) {
             if (primeList.get(i - 1) < natZahl) {
                 r = primeList.get(i - 1);
