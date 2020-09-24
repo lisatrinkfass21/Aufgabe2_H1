@@ -16,7 +16,7 @@ import java.util.Scanner;
 public class AlgorithmusGeraderZahlen {
 
     private ArrayList<Integer> primeList = new ArrayList<Integer>();
-    private ErastothenesPrimeSieve es;
+    private ErastothenesPrimeSieve eps;
     private ArrayList<Integer> natList = new ArrayList<Integer>();
 
     public static void main(String[] args) {
@@ -39,8 +39,8 @@ public class AlgorithmusGeraderZahlen {
     }
 
     public AlgorithmusGeraderZahlen(int ober) {
-        es = new ErastothenesPrimeSieve(ober);
-        primeList.addAll(es.getListOfPrimes());
+        eps = new ErastothenesPrimeSieve(ober);
+        primeList.addAll(eps.getListOfPrimes());
         for (int i = 4; i <= ober; i++) {
             natList.add(i);
             i++;
